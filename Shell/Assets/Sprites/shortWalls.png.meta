@@ -1,0 +1,92 @@
+fileFormatVersion: 2
+guid: 2cac3c87f51a941d8a69c9764d965364
+timeCreated: 1450217198
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shortWalls_0
+    21300002: shortWalls_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shortWalls_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 170
+        width: 36
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 80}
+        - {x: -18, y: 77}
+        - {x: -18, y: -80}
+        - {x: 18, y: -80}
+        - {x: 18, y: 80}
+    - name: shortWalls_1
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 170
+        width: 36
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 80}
+        - {x: -18, y: -80}
+        - {x: 14, y: -80}
+        - {x: 18, y: -61}
+        - {x: 18, y: 62}
+        - {x: 4, y: 80}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
