@@ -5,18 +5,16 @@ using UnityEngine.Advertisements;
 
 public class GameMaster : MonoBehaviour {
 
-	public static float health = 10;
-	public static float score = 0;
+	public static int health = 10;
+	public static int score = 0;
 	float highScore;
 
 	Text healthDisplay;
 	Text scoreDisplay;
 	Text highscoreDisplay;
 
-
 	void Start () {
 		Advertisement.Initialize ("1020810",true);
-		//		StartCoroutine (ShowAdWhenReady ());
 
 		healthDisplay = GameObject.Find ("Health").GetComponent<Text>();
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text>();
@@ -24,7 +22,6 @@ public class GameMaster : MonoBehaviour {
 
 		highScore = PlayerPrefs.GetInt("HighScore",0);
 		highscoreDisplay.text = highScore.ToString();
-
 	}
 
 	void Update () {
@@ -32,18 +29,11 @@ public class GameMaster : MonoBehaviour {
 			healthDisplay.text = health.ToString ();
 		else {
 			healthDisplay.text = "Game Over";
+            PlayerPrefs.SetInt("HighScore", score);
 			if (Advertisement.IsReady ()) {
 				Advertisement.Show ();	
 			}
 		}
 		scoreDisplay.text = score.ToString();
-	}
-
-	IEnumerator ShowAdWhenReady()
-	{
-		while (!Advertisement.IsReady())
-			yield return null;
-
-		Advertisement.Show ();
 	}
 }

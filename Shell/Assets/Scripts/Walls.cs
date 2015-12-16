@@ -8,33 +8,29 @@ public class Walls : MonoBehaviour {
 	public GameObject wall_l;
 	public GameObject wall_r;
 
-	public bool touch_r = false;
-	public bool touch_l = false;
-
 	void Update(){
-		if(Input.GetKey("a") || Input.GetKey("left") || touch_l){
-			RotateLeft ();
+		if(Input.GetKey("a") || Input.GetKey("left")){
+			Rotate (Vector3.forward);
 		}
-		if(Input.GetKey("d") || Input.GetKey("right") || touch_r){
-			RotateRight ();
+		if(Input.GetKey("d") || Input.GetKey("right")){
+			Rotate (Vector3.back);
 		}
+
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).position.x < Screen.width / 2)
+            {
+                Rotate(Vector3.forward);
+            }
+            else if (Input.GetTouch(0).position.x > Screen.width / 2)
+            {
+                Rotate(Vector3.back);
+            }
+        }
 	}
 
-	public void RotateLeft(){
-		wall_l.transform.RotateAround (Vector3.zero, Vector3.forward, speed * Time.deltaTime);
-		wall_r.transform.RotateAround (Vector3.zero, Vector3.forward, speed * Time.deltaTime);
-	}
-
-	public void RotateRight(){
-		wall_l.transform.RotateAround (Vector3.zero, Vector3.back, speed * Time.deltaTime);
-		wall_r.transform.RotateAround (Vector3.zero, Vector3.back, speed * Time.deltaTime);
-	}
-
-	public void setTouchL(){
-		touch_l = !touch_l;
-	}
-
-	public void setTouchR(){
-		touch_r = !touch_r;
-	}
+    public void Rotate(Vector3 direction){
+        wall_l.transform.RotateAround (Vector3.zero, direction, speed * Time.deltaTime);
+        wall_r.transform.RotateAround (Vector3.zero, direction, speed * Time.deltaTime);
+    }
 }
