@@ -4,7 +4,26 @@ using UnityEngine.SceneManagement;
 
 public class AbsorbButton : MonoBehaviour {
 
-	public void ChangeLevel(){
-		SceneManager.LoadScene ("Absorb");
-	}
+    GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public void ChangeLevel()
+    {
+        StartCoroutine(NewLevel());
+    }
+
+    IEnumerator NewLevel()
+    {
+        while (player.transform.position.y != 0)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, Vector3.zero, Time.deltaTime);
+            yield return null;
+        }
+        SceneManager.LoadScene("Absorb");
+        yield return null;
+    }
 }

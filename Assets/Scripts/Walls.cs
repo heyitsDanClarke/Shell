@@ -5,9 +5,6 @@ public class Walls : MonoBehaviour {
 
 	public float speed = 10;
 
-	public GameObject wall_l;
-	public GameObject wall_r;
-
 	public GameObject core;
 
 	void Update(){
@@ -32,7 +29,6 @@ public class Walls : MonoBehaviour {
 	}
 
     public void Rotate(Vector3 direction){
-		wall_l.transform.RotateAround (core.transform.position, direction, speed * Time.deltaTime);
-		wall_r.transform.RotateAround (core.transform.position, direction, speed * Time.deltaTime);
+        transform.RotateAround(core.transform.position, direction, speed * Time.deltaTime);
     }
 }
