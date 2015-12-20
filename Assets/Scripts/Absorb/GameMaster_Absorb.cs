@@ -19,6 +19,8 @@ public class GameMaster_Absorb : MonoBehaviour {
 	bool adTime = true;
 
 	void Start(){
+		PlayerPrefs.SetInt ("First Time", 1);
+
 		timerValue = 30;
 		level = 1;
 		adTime = true;

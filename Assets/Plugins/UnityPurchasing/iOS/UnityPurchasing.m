@@ -34,7 +34,7 @@ void Log(NSString *format, ...) {
     NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
     va_end(args);
 
-    NSLog(@"UnityPurchasing:%@", message);
+    NSLog(@"UnityIAP:%@", message);
 }
 
 @implementation UnityPurchasing
@@ -453,6 +453,20 @@ UnityPurchasing* _getInstance() {
     return _instance;
 }
 
+// Make a heap allocated copy of a string.
+// This is suitable for passing to managed code,
+// which will free the string when it is garbage collected.
+// Stack allocated variables must not be returned as results
+// from managed to native calls.
+char* MakeHeapAllocatedStringCopy (NSString* string)
+{
+    if (NULL == string) {
+        return NULL;
+    }
+    char* res = (char*)malloc([string length] + 1);
+    strcpy(res, [string UTF8String]);
+    return res;
+}
 
 void setUnityPurchasingCallback(UnityPurchasingCallback callback) {
     [_getInstance() setCallback:callback];
@@ -492,4 +506,9 @@ void unityPurchasingAddTransactionObserver() {
 void unityPurchasingRefreshAppReceipt() {
     Log(@"refreshAppReceipt");
     [_getInstance() refreshReceipt];
+}
+
+char* getUnityPurchasingAppReceipt () {
+    NSString* receipt = [_getInstance() getAppReceipt];
+    return MakeHeapAllocatedStringCopy(receipt);
 }

@@ -7,11 +7,13 @@ public class GameMaster_Deflect: MonoBehaviour {
 
 	public static int health = 10;
 	public static int score = 0;
+	public static float shield = 100;
 	int highScore;
 
 	Text healthDisplay;
 	Text scoreDisplay;
 	Text highscoreDisplay;
+	Text shieldDisplay;
 
 	GameObject player;
 	GameObject replayMenu;
@@ -19,6 +21,9 @@ public class GameMaster_Deflect: MonoBehaviour {
 	bool adTime = true;
 
 	void Start () {
+		PlayerPrefs.SetInt ("First Time", 1);
+
+		shield = 100;
 		health = 10;
 		adTime = true;
 		Time.timeScale = 1;
@@ -26,6 +31,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 		healthDisplay = GameObject.Find ("Health").GetComponent<Text>();
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text>();
 		highscoreDisplay = GameObject.Find ("High Score").GetComponent<Text>();
+		shieldDisplay = GameObject.Find ("Shield").GetComponent<Text> ();
 
 		highScore = PlayerPrefs.GetInt("HighScore",0);
 		highscoreDisplay.text = highScore.ToString();
@@ -36,6 +42,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 	}
 
 	void Update () {
+		shieldDisplay.text = shield.ToString("000");
 		if (health > 0)
 			healthDisplay.text = health.ToString ();
 		else {

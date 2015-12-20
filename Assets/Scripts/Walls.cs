@@ -15,17 +15,17 @@ public class Walls : MonoBehaviour {
 			Rotate (Vector3.back);
 		}
 
-        if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(0).position.x < Screen.width / 2)
-            {
-                Rotate(Vector3.forward);
-            }
-            else if (Input.GetTouch(0).position.x > Screen.width / 2)
-            {
-                Rotate(Vector3.back);
-            }
-        }
+		if (Input.touchCount == 1) {
+			if (Input.GetTouch (0).position.x < Screen.width / 2) {
+				Rotate (Vector3.forward);
+			} else if (Input.GetTouch (0).position.x > Screen.width / 2) {
+				Rotate (Vector3.back);
+			}
+		} else if (Input.touchCount == 2) {
+			if (GameMaster_Deflect.shield > 0) {
+				GameMaster_Deflect.shield -= 0.5f;
+			}
+		}
 	}
 
     public void Rotate(Vector3 direction){

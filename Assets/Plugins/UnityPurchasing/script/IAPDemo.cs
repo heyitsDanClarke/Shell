@@ -31,6 +31,8 @@ public class IAPDemo : MonoBehaviour, IStoreListener
         m_Controller = controller;
         m_AppleExtensions = extensions.GetExtension<IAppleExtensions> ();
 
+		InitUI(controller.products.all);
+
         Debug.Log("Available items:");
         foreach (var item in controller.products.all)
         {
@@ -150,9 +152,6 @@ public class IAPDemo : MonoBehaviour, IStoreListener
             {"com.unity3d.unityiap.unityiapdemo.subscription", GooglePlay.Name, AppleAppStore.Name}
         });
 
-        // First crack at UI configuration
-        InitUI(builder.products);
-
         // Now we're ready to initialize Unity IAP.
         UnityPurchasing.Initialize(this, builder);
     }
@@ -180,7 +179,7 @@ public class IAPDemo : MonoBehaviour, IStoreListener
         Debug.Log("Purchase deferred: " + item.definition.id);
     }
 
-    private void InitUI(HashSet<ProductDefinition> items)
+	private void InitUI(IEnumerable<Product> items)
     {
         // Disable the UI while IAP is initializing
         // See also UpdateInteractable()
@@ -196,7 +195,7 @@ public class IAPDemo : MonoBehaviour, IStoreListener
         foreach (var item in items)
         {
             // Add initial pre-IAP-initialization content. Update later in OnInitialized.
-            var description = string.Format("{0} - {1}", item.id, item.type);
+			var description = string.Format("{0} - {1}", item.definition.id, item.definition.type);
 
             GetDropdown().options.Add(new Dropdown.OptionData(description));
         }
