@@ -23,6 +23,6 @@ public class Fade : MonoBehaviour {
             yield return null;
         }
         canvasGroup.interactable = false;
-        yield return null;
+		//yield return null;
     }
 }

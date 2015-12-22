@@ -11,7 +11,6 @@ public class AbsorbButton : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
 		core = player.transform.GetChild (0).gameObject;
-
     }
 
     public void ChangeLevel()
@@ -33,6 +32,6 @@ public class AbsorbButton : MonoBehaviour {
 			yield return null;
 		}
         SceneManager.LoadScene("Absorb");
-        yield return null;
+		//yield return null;
     }
 }

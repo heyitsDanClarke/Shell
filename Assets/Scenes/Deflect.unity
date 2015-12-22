@@ -432,7 +432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1189348517
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +445,7 @@ GameObject:
   - 92: {fileID: 1189348520}
   - 124: {fileID: 1189348519}
   - 81: {fileID: 1189348518}
+  - 114: {fileID: 1189348523}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -519,6 +520,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1189348523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1189348517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c9db9dcceae4884addb12a23256988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228868562
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +719,10 @@ Prefab:
     - target: {fileID: 122514, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
       propertyPath: m_Name
       value: _GM(Deflect)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488888, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}

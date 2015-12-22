@@ -26,13 +26,13 @@ public class DeflectButton : MonoBehaviour {
         }
 		while (walls.transform.GetChild (1).GetComponent<SpriteRenderer> ().color.a > 0) {
 			foreach (Transform wall in walls.transform) {
-				float newAlpha = wall.GetComponent<SpriteRenderer> ().color.a - Time.deltaTime;
+				float newAlpha = wall.GetComponent<SpriteRenderer> ().color.a - Time.deltaTime*2;
 				wall.GetComponent<SpriteRenderer> ().color = new Color(255,255,255,newAlpha);
+				yield return null;
 			}
-			yield return null;
 		}
 
         SceneManager.LoadScene("Deflect");
-        yield return null;
+        //yield return null;
     }
 }

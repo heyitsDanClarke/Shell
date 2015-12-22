@@ -14,7 +14,7 @@ public class Target : MonoBehaviour {
 		ShieldPickup ();
 	}
 
-	void ShieldPickup(){
+	public void ShieldPickup(){
 		if (GameMaster_Deflect.shield <= 80)
 			GameMaster_Deflect.shield += 20;
 		else

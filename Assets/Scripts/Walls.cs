@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Walls : MonoBehaviour {
 
 	public float speed = 10;
 
 	public GameObject core;
+
+	bool deflect = false;
+
+	void Start(){
+		if (SceneManager.GetActiveScene().name == "Deflect")
+			deflect = true;
+	}
 
 	void Update(){
 		if(Input.GetKey("a") || Input.GetKey("left")){
@@ -21,7 +29,7 @@ public class Walls : MonoBehaviour {
 			} else if (Input.GetTouch (0).position.x > Screen.width / 2) {
 				Rotate (Vector3.back);
 			}
-		} else if (Input.touchCount == 2) {
+		} else if (Input.touchCount == 2 && deflect) {
 			if (GameMaster_Deflect.shield > 0) {
 				GameMaster_Deflect.shield -= 0.5f;
 			}

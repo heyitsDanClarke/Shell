@@ -25,6 +25,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 
 		shield = 100;
 		health = 10;
+		score = 0;
 		adTime = true;
 		Time.timeScale = 1;
 
