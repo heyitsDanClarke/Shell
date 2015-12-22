@@ -33,6 +33,5 @@ public class DeflectButton : MonoBehaviour {
 		}
 
         SceneManager.LoadScene("Deflect");
-        //yield return null;
     }
 }

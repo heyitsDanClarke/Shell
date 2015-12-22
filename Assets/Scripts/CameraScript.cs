@@ -14,6 +14,7 @@ public class CameraScript : MonoBehaviour {
 	Color[] colors;
 
 	int currentColor = 0;
+	int newColor;
 
 	bool colorChanged = true;
 
@@ -27,13 +28,28 @@ public class CameraScript : MonoBehaviour {
 		colors [5] = yellow;
 		colors [6] = pink;
 		colors [7] = purple;
+
+		Camera.main.backgroundColor = colors[2];
+		Debug.Log (Camera.main.backgroundColor);
 	}
 
 	void Update(){
 		if (GameMaster_Deflect.score % 1000 == 0 && GameMaster_Deflect.score != 0 && colorChanged) {
+			colorChanged = false;
+			newColor = Random.Range (0, 8);
+		}
+		if (!colorChanged) {
+			//Camera.main.backgroundColor = Color.Lerp (colors [currentColor], colors [newColor], Time.deltaTime);
+			Camera.main.backgroundColor = colors[newColor];
+			Debug.Log (Camera.main.backgroundColor);
+			if (Camera.main.backgroundColor == colors [newColor]) {
+				colorChanged = true;
+			}
+		}
+//		if (GameMaster_Deflect.score % 1000 == 0 && GameMaster_Deflect.score != 0 && colorChanged) {
 //			colorChanged = false;
 //			StartCoroutine (ChangeColour ());
-		}
+//		}
 	}
 
 	IEnumerator ChangeColour(){

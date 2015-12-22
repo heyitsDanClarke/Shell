@@ -32,6 +32,5 @@ public class AbsorbButton : MonoBehaviour {
 			yield return null;
 		}
         SceneManager.LoadScene("Absorb");
-		//yield return null;
     }
 }

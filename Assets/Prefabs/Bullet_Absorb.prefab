@@ -165,6 +165,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 151886, guid: f6d87465a2ed346aa9c541ea1e8f8b35, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127902}

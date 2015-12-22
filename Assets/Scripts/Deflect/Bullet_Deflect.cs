@@ -18,7 +18,7 @@ public class Bullet_Deflect : MonoBehaviour {
 		if (!this.GetComponent<Renderer> ().isVisible && collided)
 			Destroy (this.gameObject);
 	}
-
+		
 	void OnCollisionEnter2D(Collision2D other){
 		collided = true;
 		if (other.gameObject.tag == "wall") {
