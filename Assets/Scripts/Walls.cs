@@ -36,7 +36,7 @@ public class Walls : MonoBehaviour {
 		} else if (Input.touchCount == 2 && deflect) {
 			if (GameMaster_Deflect.shield > 0) {
 				GameMaster_Deflect.shield -= 0.5f;
-//				transform.GetChild (2).gameObject.SetActive (true);
+				transform.GetChild (2).gameObject.SetActive (true);
 			}
 			else
 				transform.GetChild (2).gameObject.SetActive (false);
