@@ -14,7 +14,7 @@ public class GameMaster_Absorb : MonoBehaviour {
 	Text highestLevelDisplay;
 
 	GameObject player;
-	GameObject replayMenu;
+	public GameObject replayMenu;
 
 	bool adTime = true;
 
@@ -34,8 +34,6 @@ public class GameMaster_Absorb : MonoBehaviour {
 		highestLevelDisplay.text = "Highest level: " + highestLevel.ToString();
 
 		player = GameObject.FindGameObjectWithTag ("Player");
-		replayMenu = GameObject.FindGameObjectWithTag ("ReplayMenu");
-		replayMenu.SetActive (false);
 	}
 
 	void Update(){

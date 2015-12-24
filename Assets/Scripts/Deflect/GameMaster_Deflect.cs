@@ -16,7 +16,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 	Text shieldDisplay;
 
 	GameObject player;
-	GameObject replayMenu;
+	public GameObject replayMenu;
 
 	bool adTime = true;
 
@@ -38,8 +38,8 @@ public class GameMaster_Deflect: MonoBehaviour {
 		highscoreDisplay.text = highScore.ToString();
 
 		player = GameObject.FindGameObjectWithTag ("Player");
-		replayMenu = GameObject.FindGameObjectWithTag ("ReplayMenu");
-		replayMenu.SetActive (false);
+		//replayMenu = GameObject.FindGameObjectWithTag ("ReplayMenu");
+		//replayMenu.SetActive (false);
 	}
 
 	void Update () {
