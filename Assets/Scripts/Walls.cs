@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Walls : MonoBehaviour {
 
@@ -26,7 +27,7 @@ public class Walls : MonoBehaviour {
 		if (Input.touchCount < 2) {
 			if(deflect)
 				transform.GetChild (2).gameObject.SetActive (false);
-			if (Input.touchCount == 1) {
+			if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
 				if (Input.GetTouch (0).position.x < Screen.width / 2) {
 					Rotate (Vector3.forward);
 				} else if (Input.GetTouch (0).position.x > Screen.width / 2) {
