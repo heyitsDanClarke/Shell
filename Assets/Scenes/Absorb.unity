@@ -677,6 +677,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 177912, guid: f6d87465a2ed346aa9c541ea1e8f8b35, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 128848, guid: f6d87465a2ed346aa9c541ea1e8f8b35, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6d87465a2ed346aa9c541ea1e8f8b35, type: 2}
   m_IsPrefabParent: 0

@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - wall
+  - Wall
   - ReplayMenu
   - Target
+  - Shield
   layers:
   - Default
   - TransparentFX
