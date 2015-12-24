@@ -57,6 +57,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 				Destroy (go);
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Target"))
 				Destroy (go);
+			GameObject.Find ("Menu").GetComponent<Button>().interactable = false;
 			player.SetActive (false);
 			replayMenu.SetActive (true);
 		}

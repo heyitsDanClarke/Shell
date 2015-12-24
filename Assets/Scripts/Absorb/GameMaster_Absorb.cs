@@ -58,6 +58,7 @@ public class GameMaster_Absorb : MonoBehaviour {
 				adTime = false;
 			}
 			Time.timeScale = 0;
+			GameObject.Find ("Menu").GetComponent<Button>().interactable = false;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
 				Destroy (go);
 			player.SetActive (false);

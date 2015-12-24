@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour {
 	Color32 turquoise = new Color32 (64, 224, 208,255);
-	Color32 green = new Color32 (153, 201, 83,255);
-	Color32 grey = new Color32 (131, 144, 152,255);
-	Color32 orange = new Color32 (245, 109, 68,255);
-	Color32 blue = new Color32 (86, 132, 227,255);
-	Color32 yellow = new Color32 (246, 215, 81,255);
-	Color32 pink = new Color32 (230, 93, 113,255);
-	Color32 purple = new Color32 (143, 67, 201,255);
+	Color32 blue = new Color32 (121, 123, 212,255);
+	Color32 purple = new Color32 (128, 64, 224,255);
+	Color32 fuschia = new Color32 (181, 64, 224,255);
+	Color32 pink = new Color32 (224, 64, 132,255);
+	Color32 red = new Color32 (224, 64, 64,255);
+	Color32 orange = new Color32 (245, 83, 57,255);
+	Color32 yellow = new Color32 (224, 218, 64,255);
+	Color32 green = new Color32(143,224,64,255);
 
 	Color32[] colors;
 
@@ -24,15 +25,16 @@ public class CameraScript : MonoBehaviour {
 	bool absorb;
 
 	void Start(){
-		colors = new Color32[8];
+		colors = new Color32[9];
 		colors [0] = turquoise;
-		colors [1] = green;
-		colors [2] = grey;
-		colors [3] = orange;
-		colors [4] = blue;
-		colors [5] = yellow;
-		colors [6] = pink;
-		colors [7] = purple;
+		colors [1] = blue;
+		colors [2] = purple;
+		colors [3] = fuschia;
+		colors [4] = pink;
+		colors [5] = red;
+		colors [6] = orange;
+		colors [7] = yellow;
+		colors [8] = green;
 
 		if (SceneManager.GetActiveScene().name == "Deflect")
 			deflect = true;
