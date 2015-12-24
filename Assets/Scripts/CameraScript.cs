@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour {
 	Color32 turquoise = new Color32 (64, 224, 208,255);
@@ -17,6 +18,10 @@ public class CameraScript : MonoBehaviour {
 	int newColor;
 
 	int currentScore = 0;
+	int currentLevel = 1;
+
+	bool deflect;
+	bool absorb;
 
 	void Start(){
 		colors = new Color32[8];
@@ -28,12 +33,24 @@ public class CameraScript : MonoBehaviour {
 		colors [5] = yellow;
 		colors [6] = pink;
 		colors [7] = purple;
+
+		if (SceneManager.GetActiveScene().name == "Deflect")
+			deflect = true;
+		else if (SceneManager.GetActiveScene().name == "Absorb")
+			absorb = true;
 	}
 
 	void Update(){
-		if (GameMaster_Deflect.score % 1000 == 0 && GameMaster_Deflect.score > currentScore) {
-			currentScore = GameMaster_Deflect.score;
-			StartCoroutine (ChangeColour ());
+		if (deflect) {
+			if (GameMaster_Deflect.score % 1000 == 0 && GameMaster_Deflect.score > currentScore) {
+				currentScore = GameMaster_Deflect.score;
+				StartCoroutine (ChangeColour ());
+			}
+		} else if (absorb) {
+			if (GameMaster_Absorb.level > currentLevel) {
+				currentLevel += 1;
+				StartCoroutine (ChangeColour ());
+			}
 		}
 	}
 
