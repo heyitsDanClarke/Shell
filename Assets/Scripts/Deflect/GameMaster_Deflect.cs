@@ -38,8 +38,6 @@ public class GameMaster_Deflect: MonoBehaviour {
 		highscoreDisplay.text = highScore.ToString();
 
 		player = GameObject.FindGameObjectWithTag ("Player");
-		//replayMenu = GameObject.FindGameObjectWithTag ("ReplayMenu");
-		//replayMenu.SetActive (false);
 	}
 
 	void Update () {
@@ -49,7 +47,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 		else {
 			healthDisplay.text = "Game Over";
 			if (Advertisement.IsReady () && adTime == true) {
-				Advertisement.Show ();	
+				//Advertisement.Show ();	
 				adTime = false;
 			}
 			Time.timeScale = 0;

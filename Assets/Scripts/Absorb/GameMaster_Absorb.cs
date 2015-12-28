@@ -54,7 +54,7 @@ public class GameMaster_Absorb : MonoBehaviour {
 		} else {
 			timer.text = "Game Over";
 			if (Advertisement.IsReady () && adTime == true) {
-				Advertisement.Show ();	
+				//Advertisement.Show ();	
 				adTime = false;
 			}
 			Time.timeScale = 0;

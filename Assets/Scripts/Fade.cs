@@ -12,6 +12,7 @@ public class Fade : MonoBehaviour {
 
     public void Fade_Canvas()
     {
+		canvasGroup.interactable = false;
         StartCoroutine(DoFade());
     }
 
