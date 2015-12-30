@@ -5,7 +5,10 @@ using UnityEngine.EventSystems;
 
 public class Walls : MonoBehaviour {
 
-	public float speed = 10;
+	public float maxSpeed = 200;
+	public float speed = 100;
+	public float acceleration = 10;
+	float startSpeed;
 
 	public GameObject core;
 
@@ -16,14 +19,19 @@ public class Walls : MonoBehaviour {
 	void Start(){
 		if (SceneManager.GetActiveScene().name == "Deflect")
 			deflect = true;
+		startSpeed = speed;
 	}
 
-	void Update(){
+	void FixedUpdate(){
 		if(Input.GetKey("a") || Input.GetKey("left")){
 			Rotate (Vector3.forward);
+			speed += acceleration;
+			speed = Mathf.Min (maxSpeed, speed);
 		}
 		if(Input.GetKey("d") || Input.GetKey("right")){
 			Rotate (Vector3.back);
+			speed += acceleration;
+			speed = Mathf.Min (maxSpeed, speed);
 		}
 
 		if (Input.touchCount < 2) {
@@ -32,11 +40,17 @@ public class Walls : MonoBehaviour {
 				if (GameMaster_Deflect.shield < 100 && !recovering)
 					GameMaster_Deflect.shield += Time.deltaTime* 2; //adjust to change shield recovery
 			}
-			if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
+			if (Input.touchCount == 0) {
+				speed = startSpeed; //reset speed if not rotating
+			} else if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject (Input.GetTouch (0).fingerId)) {
 				if (Input.GetTouch (0).position.x < Screen.width / 2) {
 					Rotate (Vector3.forward);
+					speed += acceleration;
+					speed = Mathf.Min (maxSpeed, speed);
 				} else if (Input.GetTouch (0).position.x > Screen.width / 2) {
 					Rotate (Vector3.back);
+					speed += acceleration;
+					speed = Mathf.Min (maxSpeed, speed);
 				}
 			}
 		} else if (Input.touchCount == 2 && deflect) {
@@ -56,7 +70,7 @@ public class Walls : MonoBehaviour {
     }
 
 	IEnumerator ShieldRecover(){
-		yield return new WaitForSeconds (5);
+		yield return new WaitForSeconds (8);
 		GameMaster_Deflect.shield = 100;
 		recovering = false;
 	}
