@@ -22,11 +22,11 @@ public class Bullet_Deflect : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other){
 		collided = true;
 		if (other.gameObject.tag == "Wall") {
-			GameMaster_Deflect.score += 100;
+			GameMaster_Deflect.score += 1;
 		}
 		if (other.gameObject.tag == "Shield") {
 			Destroy (this.gameObject);
-			GameMaster_Deflect.score += 100;
+			GameMaster_Deflect.score += 1;
 		}
 	}
 }
