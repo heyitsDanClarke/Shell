@@ -9,7 +9,7 @@ public class CameraScript : MonoBehaviour {
 	Color32 pink = new Color32 (224, 64, 132,255);
 	Color32 red = new Color32 (224, 64, 64,255);
 	Color32 orange = new Color32 (245, 83, 57,255);
-	Color32 yellow = new Color32 (224, 218, 64,255);
+	Color32 yellow = new Color32 (252, 218, 108,255);
 	Color32 green = new Color32(143,224,64,255);
 
 	Color32[] colors;

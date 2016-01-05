@@ -37,12 +37,12 @@ public class Walls : MonoBehaviour {
 		if (Input.touchCount < 2) {
 			if (deflect) {
 				transform.GetChild (2).gameObject.SetActive (false);
+                if (GameMaster_Deflect.shield < 100 && !recovering)
+                    GameMaster_Deflect.shield += Time.deltaTime * 2; //adjust to change shield recovery
 			}
 			if (Input.touchCount == 0) {
 				speed = startSpeed; //reset speed if not rotating
 			} else if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject (Input.GetTouch (0).fingerId)) {
-				if (GameMaster_Deflect.shield < 100 && !recovering)
-					GameMaster_Deflect.shield += Time.deltaTime* 2; //adjust to change shield recovery
 				if (Input.GetTouch (0).position.x < Screen.width / 2) {
 					Rotate (Vector3.forward);
 					speed += acceleration;
