@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 200
-  speed: 100
+  speed: 200
   acceleration: 10
   core: {fileID: 165324}
 --- !u!114 &11473440

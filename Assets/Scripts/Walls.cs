@@ -33,6 +33,16 @@ public class Walls : MonoBehaviour {
 			speed += acceleration;
 			speed = Mathf.Min (maxSpeed, speed);
 		}
+		if(Input.GetKey("space")){
+			if (GameMaster_Deflect.shield > 0) {
+				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
+				transform.GetChild (2).gameObject.SetActive (true);
+			} else {
+				transform.GetChild (2).gameObject.SetActive (false);
+				recovering = true;
+				StartCoroutine (ShieldRecover ());
+			}
+		}
 
 		if (Input.touchCount < 2) {
 			if (deflect) {
@@ -55,7 +65,7 @@ public class Walls : MonoBehaviour {
 			}
 		} else if (Input.touchCount == 2 && deflect) {
 			if (GameMaster_Deflect.shield > 0) {
-				GameMaster_Deflect.shield -= Time.deltaTime * 20; //adjust to increase rate of shield drainage
+				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
 				transform.GetChild (2).gameObject.SetActive (true);
 			} else {
 				transform.GetChild (2).gameObject.SetActive (false);
