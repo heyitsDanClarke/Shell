@@ -29,7 +29,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 		adTime = true;
 		Time.timeScale = 1;
 
-		healthDisplay = GameObject.Find ("Health").GetComponent<Text>();
+		//healthDisplay = GameObject.Find ("Health").GetComponent<Text>();
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text>();
 		highscoreDisplay = GameObject.Find ("High Score").GetComponent<Text>();
 
@@ -40,10 +40,13 @@ public class GameMaster_Deflect: MonoBehaviour {
 	}
 
 	void Update () {
-		if (health > 0)
-			healthDisplay.text = health.ToString ();
-		else {
-			healthDisplay.text = "Game Over";
+        if (health > 0)
+        {
+            //healthDisplay.text = health.ToString ();
+        }
+		else
+        {
+			//healthDisplay.text = "Game Over";
 			if (Advertisement.IsReady () && adTime == true) {
 				//Advertisement.Show ();	
 				adTime = false;
