@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 151886, guid: f6d87465a2ed346aa9c541ea1e8f8b35, type: 2}
-  speed: 200
+  speed: 300
   collided: 0
 --- !u!212 &21243492
 SpriteRenderer:
@@ -172,6 +172,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Autodestruct
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
