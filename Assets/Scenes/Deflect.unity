@@ -1858,17 +1858,47 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 169092, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 471490, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 416472, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 471490, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 403946, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 403946, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 403946, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 169092, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21206470, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00ed38585e97564c85c77827f17f4f0,
+        type: 3}
+    - target: {fileID: 21267566, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: f00ed38585e97564c85c77827f17f4f0,
+        type: 3}
+    - target: {fileID: 471490, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 471490, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
