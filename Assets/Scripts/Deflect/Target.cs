@@ -10,10 +10,6 @@ public class Target : MonoBehaviour {
 		}
 	}
 
-	void OnMouseDown(){
-		ShieldPickup ();
-	}
-
 	public void ShieldPickup(){
 		if (GameMaster_Deflect.shield <= 80)
 			GameMaster_Deflect.shield += 20;
