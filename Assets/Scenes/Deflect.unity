@@ -1289,18 +1289,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 122514, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
-      propertyPath: m_Name
-      value: _GM(Deflect)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11488888, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 11479136, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
       propertyPath: replayMenu
       value: 
       objectReference: {fileID: 99937614}
+    - target: {fileID: 122514, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
+      propertyPath: m_Name
+      value: _GM(Deflect)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1430960a6e8e049a195297108ffc9d9d, type: 2}
   m_IsPrefabParent: 0
