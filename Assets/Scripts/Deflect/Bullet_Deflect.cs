@@ -23,6 +23,8 @@ public class Bullet_Deflect : MonoBehaviour {
 		collided = true;
 		if (other.gameObject.tag == "Wall") {
 			GameMaster_Deflect.score += 1;
+            if (this.name == "Fast_Bullet(Clone)")
+                Destroy(this.gameObject);
 		}
 		if (other.gameObject.tag == "Shield") {
 			Destroy (this.gameObject);

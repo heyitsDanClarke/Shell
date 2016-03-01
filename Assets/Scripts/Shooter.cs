@@ -16,11 +16,17 @@ public class Shooter : MonoBehaviour {
         if (timer >= fireTime)
         {
             timer = 0;
-            Fire();
+            int ammo = Random.Range(0, 10);
+            if (ammo <= 1)
+                Fire(fastBullet);
+            else if (ammo <= 3)
+                Fire(slowBullet);
+            else
+                Fire(bullet);
         }
 	}
 
-    void Fire()
+    void Fire(GameObject bullet)
     {
         int shootWall = Random.Range(0, 4);
         if (shootWall == 0)
