@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 104162, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
-  speed: 600
+  speed: 450
   collided: 0
 --- !u!212 &21247908
 SpriteRenderer:
@@ -163,7 +163,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speed
-      value: 600
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Time
