@@ -21,13 +21,12 @@ public class Bullet_Deflect : MonoBehaviour {
 		
 	void OnCollisionEnter2D(Collision2D other){
 		collided = true;
+		if (this.name == "Fast_Bullet(Clone)")
+			Destroy(this.gameObject);
 		if (other.gameObject.tag == "Wall") {
 			GameMaster_Deflect.score += 1;
-            if (this.name == "Fast_Bullet(Clone)")
-                Destroy(this.gameObject);
 		}
 		if (other.gameObject.tag == "Shield") {
-			Destroy (this.gameObject);
 			GameMaster_Deflect.score += 1;
 		}
 	}
