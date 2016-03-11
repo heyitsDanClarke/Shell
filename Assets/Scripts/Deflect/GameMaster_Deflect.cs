@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 
 public class GameMaster_Deflect: MonoBehaviour {
 
@@ -18,15 +17,12 @@ public class GameMaster_Deflect: MonoBehaviour {
 	GameObject player;
 	public GameObject replayMenu;
 
-	bool adTime = true;
-
 	void Start () {
 		PlayerPrefs.SetInt ("First Time", 1);
 
 		shield = 100;
 		health = 10;
 		score = 0;
-		adTime = true;
 		Time.timeScale = 1;
 
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text>();
@@ -41,10 +37,6 @@ public class GameMaster_Deflect: MonoBehaviour {
 	void Update () {
 		if(health <= 0)
         {
-			if (Advertisement.IsReady () && adTime == true) {
-				//Advertisement.Show ();	
-				adTime = false;
-			}
 			Time.timeScale = 0;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
 				Destroy (go);

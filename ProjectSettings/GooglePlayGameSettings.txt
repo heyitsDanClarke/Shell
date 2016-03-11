@@ -1,0 +1,10 @@
+lastUpgrade=00932
+proj.pluginVersion=0.9.32
+proj.AppId=413856240579
+and.BundleId=com.PreposterousNonsense.Shell
+proj.classDir=Assets
+proj.ConstantsClassName=Android_Resources
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0a%3c%21--%0aGoogle+Play+game+services+IDs.%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0a--%3e%0a%3cresources%3e%0a++%3cstring+name%3d%22app_id%22%3e413856240579%3c%2fstring%3e%0a++%3cstring+name%3d%22package_name%22%3ecom.PreposterousNonsense.Shell%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement_collision%22%3eCgkIw6eE3oUMEAIQAQ%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement_marathon%22%3eCgkIw6eE3oUMEAIQAg%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement_defender%22%3eCgkIw6eE3oUMEAIQAw%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement_bastion%22%3eCgkIw6eE3oUMEAIQBA%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement_aegis%22%3eCgkIw6eE3oUMEAIQBQ%3c%2fstring%3e%0a++%3cstring+name%3d%22leaderboard_high_score%22%3eCgkIw6eE3oUMEAIQBg%3c%2fstring%3e%0a%3c%2fresources%3e
+and.ClientId=413856240579-j5atjrmtprgccv03g5haa2rv8le64v8m.apps.googleusercontent.com
+proj.requireGPlus=false
+android.SetupDone=true

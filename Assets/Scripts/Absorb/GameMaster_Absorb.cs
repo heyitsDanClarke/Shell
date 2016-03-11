@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 
 public class GameMaster_Absorb : MonoBehaviour {
 
@@ -16,14 +15,11 @@ public class GameMaster_Absorb : MonoBehaviour {
 	GameObject player;
 	public GameObject replayMenu;
 
-	bool adTime = true;
-
 	void Start(){
 		PlayerPrefs.SetInt ("First Time", 1);
 
 		timerValue = 30;
 		level = 1;
-		adTime = true;
 		Time.timeScale = 1;
 
 		timer = GameObject.Find ("Timer").GetComponent<Text>();
@@ -53,10 +49,6 @@ public class GameMaster_Absorb : MonoBehaviour {
 			timer.text = timerValue.ToString ("0");
 		} else {
 			timer.text = "Game Over";
-			if (Advertisement.IsReady () && adTime == true) {
-				//Advertisement.Show ();	
-				adTime = false;
-			}
 			Time.timeScale = 0;
 			GameObject.Find ("Menu").GetComponent<Button>().interactable = false;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
