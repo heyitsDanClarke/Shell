@@ -40,7 +40,7 @@ public class Walls : MonoBehaviour {
 			} else {
 				transform.GetChild (2).gameObject.SetActive (false);
 				recovering = true;
-				StartCoroutine (ShieldRecover ());
+				StartCoroutine (ShieldRecover (8));
 			}
 		}
 
@@ -70,7 +70,7 @@ public class Walls : MonoBehaviour {
 			} else {
 				transform.GetChild (2).gameObject.SetActive (false);
 				recovering = true;
-				StartCoroutine (ShieldRecover ());
+				StartCoroutine (ShieldRecover (8));
 			}
 		}
 	}
@@ -79,8 +79,8 @@ public class Walls : MonoBehaviour {
         transform.RotateAround(core.transform.position, direction, speed * Time.deltaTime);
     }
 
-	IEnumerator ShieldRecover(){
-		yield return new WaitForSeconds (8);
+	IEnumerator ShieldRecover(int recoveryTime){
+		yield return new WaitForSeconds (recoveryTime);
 		GameMaster_Deflect.shield = 100;
 		recovering = false;
 	}
