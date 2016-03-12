@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22488130, guid: 49a550c74d631405dbeba01b5060a03d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22488130, guid: 49a550c74d631405dbeba01b5060a03d, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -279,7 +279,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412124, guid: c06d4300c35a14a36a1315004a781a08, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22412124, guid: c06d4300c35a14a36a1315004a781a08, type: 2}
       propertyPath: m_AnchoredPosition.x
