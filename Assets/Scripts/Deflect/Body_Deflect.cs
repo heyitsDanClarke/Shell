@@ -15,7 +15,6 @@ public class Body_Deflect : MonoBehaviour {
 			Destroy(other.gameObject);
 			GameMaster_Deflect.health -= 1;
             healthBar.GetComponent<HealthBar>().ShowDamage(GameMaster_Deflect.health);
-            StopCoroutine(this.GetComponent<Flash>().Flasher());
             StartCoroutine(this.GetComponent<Flash>().Flasher());
 		}
 	}

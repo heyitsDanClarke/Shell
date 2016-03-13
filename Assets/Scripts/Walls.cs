@@ -33,20 +33,11 @@ public class Walls : MonoBehaviour {
 			speed += acceleration;
 			speed = Mathf.Min (maxSpeed, speed);
 		}
-		if(Input.GetKey("space")){
-			if (GameMaster_Deflect.shield > 0) {
-				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
-				transform.GetChild (2).gameObject.SetActive (true);
-			} else {
-				transform.GetChild (2).gameObject.SetActive (false);
-				recovering = true;
-				StartCoroutine (ShieldRecover (8));
-			}
-		}
 
 		if (Input.touchCount < 2) {
 			if (deflect) {
-				transform.GetChild (2).gameObject.SetActive (false);
+				StopCoroutine(ShieldGrow());
+				StartCoroutine (ShieldShrink ());
                 if (GameMaster_Deflect.shield < 100 && !recovering)
                     GameMaster_Deflect.shield += Time.deltaTime * 2; //adjust to change shield recovery
 			}
@@ -65,10 +56,12 @@ public class Walls : MonoBehaviour {
 			}
 		} else if (Input.touchCount == 2 && deflect) {
 			if (GameMaster_Deflect.shield > 0) {
+				StopCoroutine(ShieldShrink());
+				StartCoroutine (ShieldGrow ());
 				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
-				transform.GetChild (2).gameObject.SetActive (true);
 			} else {
-				transform.GetChild (2).gameObject.SetActive (false);
+				StopCoroutine(ShieldGrow());
+				StartCoroutine (ShieldShrink ());
 				recovering = true;
 				StartCoroutine (ShieldRecover (8));
 			}
@@ -83,5 +76,23 @@ public class Walls : MonoBehaviour {
 		yield return new WaitForSeconds (recoveryTime);
 		GameMaster_Deflect.shield = 100;
 		recovering = false;
+	}
+
+	IEnumerator ShieldGrow(){
+		GameObject shield = transform.GetChild (2).gameObject;
+		shield.SetActive (true);
+		while(shield.transform.localScale.x < 0.8f){
+			shield.transform.localScale = new Vector3 (shield.transform.localScale.x + 0.01f, shield.transform.localScale.y + 0.01f, 1);
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+	IEnumerator ShieldShrink(){
+		GameObject shield = transform.GetChild (2).gameObject;
+		while(shield.transform.localScale.x > 0.49){
+			shield.transform.localScale = new Vector3 (shield.transform.localScale.x - 0.01f, shield.transform.localScale.y - 0.01f, 1);
+			yield return new WaitForEndOfFrame();
+		}
+		shield.SetActive (false);
 	}
 }

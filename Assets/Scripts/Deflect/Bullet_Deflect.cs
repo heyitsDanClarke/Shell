@@ -23,11 +23,11 @@ public class Bullet_Deflect : MonoBehaviour {
 		collided = true;
 		if (other.gameObject.tag == "Wall") {
 			GameMaster_Deflect.score += 1;
-            StopCoroutine(other.gameObject.GetComponent<Flash>().Flasher());
             StartCoroutine(other.gameObject.GetComponent<Flash>().Flasher());
 		}
 		if (other.gameObject.tag == "Shield") {
 			GameMaster_Deflect.score += 1;
+			StartCoroutine(other.gameObject.GetComponent<Flash>().Flasher());
 		}
 	}
 }
