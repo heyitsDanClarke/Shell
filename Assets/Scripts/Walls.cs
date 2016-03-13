@@ -85,10 +85,14 @@ public class Walls : MonoBehaviour {
 			shield.transform.localScale = new Vector3 (shield.transform.localScale.x + 0.01f, shield.transform.localScale.y + 0.01f, 1);
 			yield return new WaitForEndOfFrame();
 		}
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
 	}
 
 	IEnumerator ShieldShrink(){
 		GameObject shield = transform.GetChild (2).gameObject;
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(true);
 		while(shield.transform.localScale.x > 0.49){
 			shield.transform.localScale = new Vector3 (shield.transform.localScale.x - 0.01f, shield.transform.localScale.y - 0.01f, 1);
 			yield return new WaitForEndOfFrame();

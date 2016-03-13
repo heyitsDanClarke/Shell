@@ -1,0 +1,89 @@
+fileFormatVersion: 2
+guid: 427edd1a98050694fac2ca8ab8120ab4
+timeCreated: 1457849508
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shield_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shield_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 50
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -98, y: 200}
+        - {x: -147, y: 169}
+        - {x: -200, y: 76}
+        - {x: -200, y: -101}
+        - {x: -115, y: -200}
+        - {x: 167, y: -200}
+        - {x: 200, y: -85}
+        - {x: 200, y: 114}
+        - {x: 125, y: 200}
+      - - {x: -38, y: -176}
+        - {x: -116, y: -138}
+        - {x: -156, y: -89}
+        - {x: -176, y: 38}
+        - {x: -156, y: 89}
+        - {x: -53, y: 172}
+        - {x: 38, y: 176}
+        - {x: 172, y: 53}
+        - {x: 179, y: -19}
+        - {x: 138, y: -116}
+        - {x: 74, y: -164}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
