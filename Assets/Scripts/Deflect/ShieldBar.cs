@@ -22,7 +22,7 @@ public class ShieldBar : MonoBehaviour {
         originalSizeX = rect.sizeDelta.x;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rect.sizeDelta = new Vector2(originalSizeX * (GameMaster_Deflect.shield/100), rect.sizeDelta.y);
 

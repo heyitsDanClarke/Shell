@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour {
         }
     }
 
-	void Update(){
+	void FixedUpdate(){
 		if (GameMaster_Deflect.health <= 2)
 			lowHealth = true;
 		else

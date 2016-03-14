@@ -14,7 +14,7 @@ public class Bullet_Deflect : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().AddForce (targetDirection * speed);
 	}
 
-	void Update(){
+	void FixedUpdate(){
 		if (!this.GetComponent<Renderer> ().isVisible && collided)
 			Destroy (this.gameObject);
 	}
