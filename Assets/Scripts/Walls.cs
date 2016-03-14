@@ -23,7 +23,7 @@ public class Walls : MonoBehaviour {
 	}
 
 	void Update(){
-		timer += Time.fixedDeltaTime;
+		timer += Time.deltaTime;
 		if(Input.GetKey("a") || Input.GetKey("left"))
 			Rotate (Vector3.forward);
 		if(Input.GetKey("d") || Input.GetKey("right"))
@@ -32,8 +32,13 @@ public class Walls : MonoBehaviour {
 		if (Input.touchCount < 2) {
 			if (deflect) {
 				ShieldShrink ();
+				if (timer < 3) {
+					recovering = true;
+				} else {
+					recovering = false;
+				}
                 if (GameMaster_Deflect.shield < 100 && !recovering)
-                    GameMaster_Deflect.shield += Time.deltaTime * 2; //adjust to change shield recovery
+                    GameMaster_Deflect.shield += Time.deltaTime * 10; //adjust to change shield recovery
 			}
 			if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject (Input.GetTouch (0).fingerId)) {
 				if (Input.GetTouch (0).position.x < Screen.width / 2)
@@ -43,6 +48,7 @@ public class Walls : MonoBehaviour {
 			}
 		} else if (Input.touchCount == 2 && deflect) {
 			if (GameMaster_Deflect.shield > 0) {
+				timer = 0;
 				ShieldGrow ();
 				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
 			} else {
@@ -61,12 +67,8 @@ public class Walls : MonoBehaviour {
 
 	IEnumerator ShieldRecover(int recoveryTime){
 		yield return new WaitForSeconds (recoveryTime);
-		if (recoveryTime > 2) {
-			GameMaster_Deflect.shield = 100;
-			recovering = false;
-		} else {
-
-		}
+		GameMaster_Deflect.shield = 100;
+		recovering = false;
 	}
 
 	void ShieldGrow(){
