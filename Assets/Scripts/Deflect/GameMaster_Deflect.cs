@@ -12,7 +12,6 @@ public class GameMaster_Deflect: MonoBehaviour {
 	Text healthDisplay;
 	Text scoreDisplay;
 	Text highscoreDisplay;
-	Text shieldDisplay;
 
 	GameObject player;
 	public GameObject replayMenu;
@@ -40,9 +39,9 @@ public class GameMaster_Deflect: MonoBehaviour {
 			Time.timeScale = 0;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
 				Destroy (go);
-			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Target"))
-				Destroy (go);
 			GameObject.Find ("Menu").GetComponent<Button>().interactable = false;
+			GameObject.Find ("Health").GetComponent<HealthBar> ().ResetColor ();
+			GameObject.Find ("ShieldBar").GetComponent<ShieldBar> ().ResetColor ();
 			player.SetActive (false);
 			replayMenu.SetActive (true);
 		}

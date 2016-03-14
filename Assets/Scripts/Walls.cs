@@ -15,6 +15,7 @@ public class Walls : MonoBehaviour {
 	bool recovering = false;
 
 	float timer = 0;
+	int rechargeTimer = 2;
 
 	void Start(){
 		if (SceneManager.GetActiveScene().name == "Deflect")
@@ -24,6 +25,19 @@ public class Walls : MonoBehaviour {
 
 	void Update(){
 		timer += Time.deltaTime;
+
+		if (timer < rechargeTimer) {
+			recovering = true;
+		} else {
+			recovering = false;
+			if (rechargeTimer >= 6) {
+				GameMaster_Deflect.shield = 100;
+				rechargeTimer = 2;
+			}
+		}
+		if (GameMaster_Deflect.shield < 100 && !recovering)
+			GameMaster_Deflect.shield += Time.deltaTime * 15; //adjust to change shield recovery
+		
 		if(Input.GetKey("a") || Input.GetKey("left"))
 			Rotate (Vector3.forward);
 		if(Input.GetKey("d") || Input.GetKey("right"))
@@ -32,13 +46,6 @@ public class Walls : MonoBehaviour {
 		if (Input.touchCount < 2) {
 			if (deflect) {
 				ShieldShrink ();
-				if (timer < 3) {
-					recovering = true;
-				} else {
-					recovering = false;
-				}
-                if (GameMaster_Deflect.shield < 100 && !recovering)
-                    GameMaster_Deflect.shield += Time.deltaTime * 10; //adjust to change shield recovery
 			}
 			if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject (Input.GetTouch (0).fingerId)) {
 				if (Input.GetTouch (0).position.x < Screen.width / 2)
@@ -46,17 +53,14 @@ public class Walls : MonoBehaviour {
 				else if (Input.GetTouch (0).position.x > Screen.width / 2)
 					Rotate (Vector3.back);
 			}
-		} else if (Input.touchCount == 2 && deflect) {
+		} else if (Input.touchCount >= 2 && deflect) {
+			timer = 0;
 			if (GameMaster_Deflect.shield > 0) {
-				timer = 0;
 				ShieldGrow ();
 				GameMaster_Deflect.shield -= Time.deltaTime * 50; //adjust to increase rate of shield drainage
 			} else {
 				ShieldShrink ();
-				if (!recovering) {
-					recovering = true;
-					StartCoroutine (ShieldRecover (8));
-				}
+				rechargeTimer = 8;
 			}
 		}
 	}
@@ -64,12 +68,6 @@ public class Walls : MonoBehaviour {
     public void Rotate(Vector3 direction){
         transform.RotateAround(core.transform.position, direction, speed * Time.deltaTime);
     }
-
-	IEnumerator ShieldRecover(int recoveryTime){
-		yield return new WaitForSeconds (recoveryTime);
-		GameMaster_Deflect.shield = 100;
-		recovering = false;
-	}
 
 	void ShieldGrow(){
 		shield.SetActive (true);
