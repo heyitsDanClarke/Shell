@@ -49,7 +49,7 @@ public class GameMaster_Deflect: MonoBehaviour {
 			GameObject.Find ("ShieldBar").GetComponent<ShieldBar> ().ResetColor ();
 			player.SetActive (false);
 			replayMenu.SetActive (true);
-			AdMobHandler.RequestBanner ();
+			//AdMobHandler.RequestBanner ();
 			_gameOver = true;
 		}
 		scoreDisplay.text = score.ToString();
