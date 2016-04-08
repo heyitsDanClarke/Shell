@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Yes : MonoBehaviour {
 
 	public void Replay(){
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		AdMobHandler.bannerView.Destroy ();
+		SceneManager.LoadScene ("Deflect");
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using GoogleMobileAds.Api;
 
 public class GameMaster_Deflect: MonoBehaviour {
 
@@ -8,6 +9,10 @@ public class GameMaster_Deflect: MonoBehaviour {
 	public static int score = 0;
 	public static float shield = 100;
 	int highScore;
+
+	bool _gameOver = false;
+
+	BannerView bannerView;
 
 	Text healthDisplay;
 	Text scoreDisplay;
@@ -33,8 +38,8 @@ public class GameMaster_Deflect: MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
-	void Update () {
-		if(health <= 0)
+	void FixedUpdate () {
+		if(health <= 0 && !_gameOver)
         {
 			Time.timeScale = 0;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
@@ -44,6 +49,8 @@ public class GameMaster_Deflect: MonoBehaviour {
 			GameObject.Find ("ShieldBar").GetComponent<ShieldBar> ().ResetColor ();
 			player.SetActive (false);
 			replayMenu.SetActive (true);
+			AdMobHandler.RequestBanner ();
+			_gameOver = true;
 		}
 		scoreDisplay.text = score.ToString();
 		if (highScore < score) {
