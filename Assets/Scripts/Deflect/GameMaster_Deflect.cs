@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using GoogleMobileAds.Api;
 
 public class GameMaster_Deflect: MonoBehaviour {
 
@@ -11,8 +10,6 @@ public class GameMaster_Deflect: MonoBehaviour {
 	int highScore;
 
 	bool _gameOver = false;
-
-	BannerView bannerView;
 
 	Text healthDisplay;
 	Text scoreDisplay;

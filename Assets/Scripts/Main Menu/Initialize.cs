@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Advertisements;
 
-public class Initialize : MonoBehaviour {
-
+public class Initialize : MonoBehaviour
+{
 	public GameObject tutorialText;
 
-	void Start () {
+	void Start ()
+    {
 		Time.timeScale = 1;
 
 		if (PlayerPrefs.GetInt ("First Time", 0) == 0) {

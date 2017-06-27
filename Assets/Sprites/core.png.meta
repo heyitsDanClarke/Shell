@@ -1,15 +1,16 @@
 fileFormatVersion: 2
 guid: 007343281a984484abd45aeafb347c67
-timeCreated: 1450161963
+timeCreated: 1498510326
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
-  serializedVersion: 2
+  fileIDToRecycleName:
+    21300000: Core
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -21,10 +22,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -2
   maxTextureSize: 2048
@@ -35,22 +34,94 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
-  spriteMode: 1
-  spriteExtrude: 1
+  spriteMode: 2
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 125, y: 125, z: 125, w: 125}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
-    sprites: []
-    outline: []
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Core
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 125
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: 127, y: -32}
+      - {x: 127, y: 28}
+      - {x: 126, y: 40}
+      - {x: 105, y: 76}
+      - {x: 84, y: 98}
+      - {x: 52, y: 124}
+      - {x: 24, y: 127}
+      - {x: -34, y: 127}
+      - {x: -51, y: 123}
+      - {x: -100, y: 88}
+      - {x: -116, y: 57}
+      - {x: -127, y: 26}
+      - {x: -127, y: -23}
+      - {x: -125, y: -40}
+      - {x: -112, y: -67}
+      - {x: -84, y: -98}
+      - {x: -66, y: -112}
+      - {x: -30, y: -127}
+      - {x: 31, y: -127}
+      - {x: 78, y: -108}
+      - {x: 102, y: -79}
+      - {x: 113, y: -67}
   spritePackingTag: 
   userData: 
   assetBundleName: 
