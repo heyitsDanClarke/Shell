@@ -2,9 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameMaster_Absorb : MonoBehaviour {
+public class AbsorbLogic : MonoBehaviour {
 
-	public static int level = 1;
+    public static AbsorbLogic Instance;
+
+	public int level = 1;
 	int highestLevel;
 
 	float timerValue;
@@ -15,7 +17,15 @@ public class GameMaster_Absorb : MonoBehaviour {
 	GameObject player;
 	public GameObject replayMenu;
 
-	void Start(){
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+    }
+
+    void Start(){
 		PlayerPrefs.SetInt ("First Time", 1);
 
 		timerValue = 30;

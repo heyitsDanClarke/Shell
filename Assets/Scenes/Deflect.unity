@@ -1906,6 +1906,7 @@ Prefab:
     - {fileID: 5080906, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
     - {fileID: 5014028, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
     - {fileID: 5072508, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
+    - {fileID: 5067844, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f2418f02b2af84d10b60bf1530a4b5d0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1967669560

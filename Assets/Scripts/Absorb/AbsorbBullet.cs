@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet_Absorb : MonoBehaviour {
+public class AbsorbBullet : MonoBehaviour {
 
 	public GameObject target;
 

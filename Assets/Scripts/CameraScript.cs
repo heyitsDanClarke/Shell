@@ -47,7 +47,7 @@ public class CameraScript : MonoBehaviour {
 				StartCoroutine (ChangeColour ());
 			}
 		} else if (absorb) {
-			if (GameMaster_Absorb.level > currentLevel) {
+			if (AbsorbLogic.Instance.level > currentLevel) {
 				currentLevel += 1;
 				StartCoroutine (ChangeColour ());
 			}
