@@ -9,6 +9,7 @@ TagManager:
   - ReplayMenu
   - Target
   - Shield
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1896946783
+    locked: 0
   - name: Back
     uniqueID: 301586775
     locked: 0

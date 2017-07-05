@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_ShadowMaskMode: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -366,6 +366,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 563145684}
+--- !u!1001 &878116640
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258639653719102, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 212469215525327674, guid: 5781c870a17e32a42a82ae985ab1b6cd,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1896946783
+      objectReference: {fileID: 0}
+    - target: {fileID: 212469215525327674, guid: 5781c870a17e32a42a82ae985ab1b6cd,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5781c870a17e32a42a82ae985ab1b6cd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1768300949
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +651,7 @@ Camera:
   m_GameObject: {fileID: 1938798492}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.2509804, g: 0.8784314, b: 0.8156863, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
