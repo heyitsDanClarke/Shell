@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameMaster_Deflect: MonoBehaviour {
+public class DeflectLogic: MonoBehaviour {
 
-	public static int health = 10;
-	public static int score = 0;
-	public static float shield = 100;
+    public static DeflectLogic Instance;
+
+	public int health = 10;
+	public int score = 0;
+	public float shield = 100;
 	int highScore;
 
 	bool _gameOver = false;
@@ -17,6 +19,14 @@ public class GameMaster_Deflect: MonoBehaviour {
 
 	GameObject player;
 	public GameObject replayMenu;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+    }
 
 	void Start () {
 		PlayerPrefs.SetInt ("First Time", 1);
@@ -46,7 +56,6 @@ public class GameMaster_Deflect: MonoBehaviour {
 			GameObject.Find ("ShieldBar").GetComponent<ShieldBar> ().ResetColor ();
 			player.SetActive (false);
 			replayMenu.SetActive (true);
-			//AdMobHandler.RequestBanner ();
 			_gameOver = true;
 		}
 		scoreDisplay.text = score.ToString();

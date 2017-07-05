@@ -34,12 +34,12 @@ public class WallControls : MonoBehaviour {
 		} else {
 			recovering = false;
 			if (rechargeTimer >= 6) {
-				GameMaster_Deflect.shield = 100;
+				DeflectLogic.Instance.shield = 100;
 				rechargeTimer = 2;
 			}
 		}
-		if (GameMaster_Deflect.shield < 100 && !recovering)
-			GameMaster_Deflect.shield += Time.deltaTime * shieldRecovery; //adjust to change shield recovery
+		if (DeflectLogic.Instance.shield < 100 && !recovering)
+			DeflectLogic.Instance.shield += Time.deltaTime * shieldRecovery; //adjust to change shield recovery
 		
 		if(Input.GetKey("a") || Input.GetKey("left"))
 			Rotate (Vector3.forward);
@@ -57,11 +57,11 @@ public class WallControls : MonoBehaviour {
 					Rotate (Vector3.back);
 			}
 		} else if (Input.touchCount >= 2 && deflect) {
-			if(GameMaster_Deflect.shield > 0)
+			if(DeflectLogic.Instance.shield > 0)
 				timer = 0;
-			if (GameMaster_Deflect.shield > 0) {
+			if (DeflectLogic.Instance.shield > 0) {
 				ShieldGrow ();
-				GameMaster_Deflect.shield -= Time.deltaTime * shieldDrain; //adjust to increase rate of shield drainage
+				DeflectLogic.Instance.shield -= Time.deltaTime * shieldDrain; //adjust to increase rate of shield drainage
 			} else {
 				ShieldShrink ();
 				rechargeTimer = 6;

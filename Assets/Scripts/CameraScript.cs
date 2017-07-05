@@ -42,8 +42,8 @@ public class CameraScript : MonoBehaviour {
 
 	void Update(){
 		if (deflect) {
-			if (GameMaster_Deflect.score % 10 == 0 && GameMaster_Deflect.score > currentScore) {
-				currentScore = GameMaster_Deflect.score;
+			if (DeflectLogic.Instance.score % 10 == 0 && DeflectLogic.Instance.score > currentScore) {
+				currentScore = DeflectLogic.Instance.score;
 				StartCoroutine (ChangeColour ());
 			}
 		} else if (absorb) {

@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour {
     }
 
 	void FixedUpdate(){
-		if (GameMaster_Deflect.health <= 2)
+		if (DeflectLogic.Instance.health <= 2)
 			lowHealth = true;
 		else
 			lowHealth = false;
@@ -36,11 +36,11 @@ public class HealthBar : MonoBehaviour {
     }
 
 	void Pulse(){
-		this.GetComponent<Image> ().color = Color.Lerp (this.GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
+		GetComponent<Image> ().color = Color.Lerp (GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
 		foreach(var bar in healthBars)
-			bar.GetComponent<Image>().color = Color.Lerp (this.GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
+			bar.GetComponent<Image>().color = Color.Lerp (GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
 
-		if (this.GetComponent<Image> ().color == targetColor) {
+		if (GetComponent<Image> ().color == targetColor) {
 			if (targetColor == pulseColor)
 				targetColor = Color.white;
 			else
@@ -49,7 +49,7 @@ public class HealthBar : MonoBehaviour {
 	}
 
 	public void ResetColor(){
-		this.GetComponent<Image> ().color = Color.white;
+		GetComponent<Image> ().color = Color.white;
 		foreach (var bar in healthBars) {
 			bar.GetComponent<Image> ().color = Color.white;
 		}

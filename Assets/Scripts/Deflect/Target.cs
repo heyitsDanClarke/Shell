@@ -4,17 +4,17 @@ using System.Collections;
 public class Target : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Bullet" && other.gameObject.GetComponent<Bullet_Deflect>().collided) {
+		if (other.gameObject.tag == "Bullet" && other.gameObject.GetComponent<DeflectBullet>().collided) {
 			ShieldPickup ();
 			Destroy (other.gameObject);
 		}
 	}
 
 	public void ShieldPickup(){
-		if (GameMaster_Deflect.shield <= 80)
-			GameMaster_Deflect.shield += 20;
+		if (DeflectLogic.Instance.shield <= 80)
+			DeflectLogic.Instance.shield += 20;
 		else
-			GameMaster_Deflect.shield = 100;
-		Destroy(this.gameObject);
+			DeflectLogic.Instance.shield = 100;
+		Destroy(gameObject);
 	}
 }

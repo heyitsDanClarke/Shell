@@ -18,31 +18,31 @@ public class ShieldBar : MonoBehaviour {
     void Start()
     {
 		targetColor = pulseColor;
-        rect = this.GetComponent<RectTransform>();
+        rect = GetComponent<RectTransform>();
         originalSizeX = rect.sizeDelta.x;
     }
 
     void FixedUpdate()
     {
-        rect.sizeDelta = new Vector2(originalSizeX * (GameMaster_Deflect.shield/100), rect.sizeDelta.y);
+        rect.sizeDelta = new Vector2(originalSizeX * (DeflectLogic.Instance.shield/100), rect.sizeDelta.y);
 
-		if (GameMaster_Deflect.shield <= 20)
+		if (DeflectLogic.Instance.shield <= 20)
 			lowShield = true;
 		else
 			lowShield = false;
 
 		if (lowShield) {
 			Pulse ();
-		} else if(this.GetComponent<Image>().color != Color.white) {
+		} else if(GetComponent<Image>().color != Color.white) {
 			ResetColor ();
 		}
     }
 
 	void Pulse(){
-		this.GetComponent<Image> ().color = Color.Lerp (this.GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
-		shieldFrame.GetComponent<Image> ().color = Color.Lerp (this.GetComponent<Image> ().color, targetColor, 20 * Time.deltaTime);
+        GetComponent<Image>().color = Color.Lerp (GetComponent<Image>().color, targetColor, 20 * Time.deltaTime);
+		shieldFrame.GetComponent<Image> ().color = Color.Lerp (GetComponent<Image>().color, targetColor, 20 * Time.deltaTime);
 
-		if (this.GetComponent<Image> ().color == targetColor) {
+		if (GetComponent<Image>().color == targetColor) {
 			if (targetColor == pulseColor)
 				targetColor = Color.white;
 			else
@@ -51,7 +51,7 @@ public class ShieldBar : MonoBehaviour {
 	}
 
 	public void ResetColor(){
-		this.GetComponent<Image> ().color = Color.white;
+        GetComponent<Image>().color = Color.white;
 		shieldFrame.GetComponent<Image> ().color = Color.white;
 	}
 }
