@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 246087854}
   - component: {fileID: 246087855}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,9 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 246087849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6180bcf865f4c2d4f902b0180f60faa8, type: 3}
+  m_Script: {fileID: 11500000, guid: 019c1b3b57eb2324984d9f6b36a917ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialText: {fileID: 1944394881}
 --- !u!1 &473551181
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,47 +366,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 563145684}
---- !u!1 &1281915444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1281915446}
-  - component: {fileID: 1281915445}
-  m_Layer: 0
-  m_Name: GM_Main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1281915445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281915444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6932efc3d6be4a9fa3ae4cacebbb943, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialText: {fileID: 1944394881}
---- !u!4 &1281915446
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281915444}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1768300949
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +377,6 @@ GameObject:
   - component: {fileID: 1768300953}
   - component: {fileID: 1768300951}
   - component: {fileID: 1768300952}
-  - component: {fileID: 1768300954}
   m_Layer: 5
   m_Name: Absorb Button
   m_TagString: Untagged
@@ -482,8 +441,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1768300954}
-        m_MethodName: ChangeLevel
+      - m_Target: {fileID: 246087855}
+        m_MethodName: SelectAbsorb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -494,7 +453,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 246087855}
-        m_MethodName: Fade_Canvas
+        m_MethodName: FadeCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -545,17 +504,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768300949}
---- !u!114 &1768300954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1768300949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31985f660b0fc4d7b9acb9e232ad6496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1847510859
 Prefab:
   m_ObjectHideFlags: 0
@@ -595,7 +543,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11456400, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
+    - {fileID: 11472042, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
+    - {fileID: 5888326, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
+    - {fileID: 6077680, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
+    - {fileID: 6080862, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 706cf2bb5309c45b78ebacef97257c87, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1938798492
@@ -772,7 +725,6 @@ GameObject:
   - component: {fileID: 2002193373}
   - component: {fileID: 2002193371}
   - component: {fileID: 2002193372}
-  - component: {fileID: 2002193374}
   m_Layer: 5
   m_Name: Deflect Button
   m_TagString: Untagged
@@ -795,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 103.5, y: 101.13}
+  m_AnchoredPosition: {x: 103.5, y: 101.130005}
   m_SizeDelta: {x: 160, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002193371
@@ -837,8 +789,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002193374}
-        m_MethodName: ChangeLevel
+      - m_Target: {fileID: 246087855}
+        m_MethodName: SelectDeflect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -849,7 +801,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 246087855}
-        m_MethodName: Fade_Canvas
+        m_MethodName: FadeCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -900,14 +852,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2002193369}
---- !u!114 &2002193374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2002193369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0a6d9956d344ec1b1902bbb5ad6168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
