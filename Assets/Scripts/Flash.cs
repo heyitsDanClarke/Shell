@@ -11,7 +11,7 @@ public class Flash : MonoBehaviour
 
     void Start()
     {
-        originalColor = this.GetComponent<SpriteRenderer>().color;
+        originalColor = GetComponent<SpriteRenderer>().color;
     }
 
     void Update()
@@ -28,14 +28,14 @@ public class Flash : MonoBehaviour
             {
                 flashed = false;
                 timer = 0;
-                this.GetComponent<SpriteRenderer>().color = originalColor;
+                GetComponent<SpriteRenderer>().color = originalColor;
             }
         }
     }
 
     public void Flasher()
     {
-        this.GetComponent<SpriteRenderer>().color = flashColor;
+        GetComponent<SpriteRenderer>().color = flashColor;
         flashed = true;
            
     }

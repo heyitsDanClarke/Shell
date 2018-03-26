@@ -31,34 +31,12 @@ public class MainMenu : MonoBehaviour {
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void SelectAbsorb()
+    public void Play()
     {
-        StartCoroutine(LoadAbsorb());
+        StartCoroutine(LoadGame());
     }
 
-    IEnumerator LoadAbsorb()
-    {
-        while (player.transform.position.y != 0)
-        {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, Vector3.zero, Time.deltaTime);
-            yield return null;
-        }
-        while (core.transform.localScale.x > 0.3f)
-        {
-            float newX = core.transform.localScale.x - Time.deltaTime / 2;
-            float newY = core.transform.localScale.y - Time.deltaTime / 2;
-            core.transform.localScale = new Vector3(newX, newY, 1);
-            yield return null;
-        }
-        SceneManager.LoadScene("Absorb");
-    }
-
-    public void SelectDeflect()
-    {
-        StartCoroutine(LoadDeflect());
-    }
-
-    IEnumerator LoadDeflect()
+    IEnumerator LoadGame()
     {
         while (player.transform.position.y != 0)
         {
@@ -75,7 +53,7 @@ public class MainMenu : MonoBehaviour {
             }
         }
 
-        SceneManager.LoadScene("Deflect");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void FadeCanvas()

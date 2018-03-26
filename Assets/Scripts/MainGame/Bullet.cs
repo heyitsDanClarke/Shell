@@ -6,23 +6,19 @@ public class Bullet : MonoBehaviour {
 
     SpriteRenderer _sr;
 
+    public bool isFriendly = false;
+
     private void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
-        SetColourComplement();
+        SetColourComplement(Camera.main.backgroundColor);
     }
 
-    void Update () {
-        SetColourComplement(); //remove later
-	}
-
-    void SetColourComplement()
+    void SetColourComplement(Color inputColor)
     {
-        float hueHolder,satHolder,value = -1;
-        Color.RGBToHSV(Camera.main.backgroundColor, out hueHolder, out satHolder, out value);
-        hueHolder *= 360;
-        hueHolder = (hueHolder + 180) % 360;
-        hueHolder /= 360;
-        _sr.color = Color.HSVToRGB(1-hueHolder, satHolder, value);
+        float tempH, tempS, tempV;
+        Color.RGBToHSV(inputColor, out tempH, out tempS, out tempV);
+        float newH = (tempH + 0.5f) % 1;
+        _sr.color = Color.HSVToRGB(newH, tempS, tempV);
     } 
 }

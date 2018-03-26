@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour {
     }
 
 	void FixedUpdate(){
-		if (DeflectLogic.Instance.health <= 2)
+		if (GameManager.Instance.health <= 2)
 			lowHealth = true;
 		else
 			lowHealth = false;
