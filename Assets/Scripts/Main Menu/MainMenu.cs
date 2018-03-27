@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour {
 
     GameObject player;
     GameObject walls;
-    GameObject core;
 
     CanvasGroup canvasGroup;
 
@@ -25,7 +24,6 @@ public class MainMenu : MonoBehaviour {
 
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        core = player.transform.GetChild(0).gameObject;
         walls = player.transform.GetChild(1).gameObject;
 
         canvasGroup = GetComponent<CanvasGroup>();

@@ -64,4 +64,9 @@ public class GameManager : MonoBehaviour {
         }
         highscoreDisplay.text = highScore.ToString();
     }
+
+    public void NextLevel()
+    {
+        player.transform.GetChild(0).localScale = player.transform.GetChild(0).gameObject.GetComponent<Core>().startingSize;
+    }
 }

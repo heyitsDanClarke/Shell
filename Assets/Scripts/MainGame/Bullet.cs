@@ -11,7 +11,8 @@ public class Bullet : MonoBehaviour {
     private void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
-        SetColourComplement(Camera.main.backgroundColor);
+        if (!isFriendly)
+            SetColourComplement(Camera.main.backgroundColor);
     }
 
     void SetColourComplement(Color inputColor)

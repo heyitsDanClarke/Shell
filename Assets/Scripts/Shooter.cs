@@ -4,8 +4,6 @@ using System.Collections;
 public class Shooter : MonoBehaviour {
 
 	public GameObject bullet;
-    public GameObject fastBullet;
-    public GameObject slowBullet;
 
 	float timer = 0;
 	public float fireTime =2;
@@ -16,13 +14,7 @@ public class Shooter : MonoBehaviour {
         if (timer >= fireTime)
         {
             timer = 0;
-            int ammo = Random.Range(0, 10);
-            if (ammo <= 1)
-                Fire(fastBullet);
-            else if (ammo <= 3)
-                Fire(slowBullet);
-            else
-                Fire(bullet);
+            Fire(bullet);
         }
 	}
 
