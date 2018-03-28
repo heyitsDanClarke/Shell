@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
     int highScore;
 
-    Text healthDisplay;
+    HealthBar healthBar;
     Text scoreDisplay;
     Text highscoreDisplay;
 
@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour {
         highscoreDisplay.text = highScore.ToString();
 
         player = GameObject.FindGameObjectWithTag("Player");
+
+        healthBar = GameObject.Find("Health").GetComponent<HealthBar>();
     }
 
     void FixedUpdate()
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour {
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
                 Destroy(go);
             GameObject.Find("Pause").GetComponent<Button>().interactable = false;
-            GameObject.Find("Health").GetComponent<HealthBar>().ResetColor();
+            healthBar.GetComponent<HealthBar>().ResetColor();
             player.SetActive(false);
             replayMenu.SetActive(true);
             _gameOver = true;
@@ -68,5 +70,11 @@ public class GameManager : MonoBehaviour {
     public void NextLevel()
     {
         player.transform.GetChild(0).localScale = player.transform.GetChild(0).gameObject.GetComponent<Core>().startingSize;
+    }
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+        healthBar.ShowDamage(health);
     }
 }

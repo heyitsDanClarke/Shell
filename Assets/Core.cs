@@ -25,7 +25,7 @@ public class Core : MonoBehaviour {
             }
             else
             {
-                GameManager.Instance.health -= 1;
+                GameManager.Instance.Damage(1);
             }
 
             Destroy(collision.gameObject);
