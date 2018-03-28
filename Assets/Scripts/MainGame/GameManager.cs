@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 0;
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bullet"))
                 Destroy(go);
-            GameObject.Find("Menu").GetComponent<Button>().interactable = false;
+            GameObject.Find("Pause").GetComponent<Button>().interactable = false;
             GameObject.Find("Health").GetComponent<HealthBar>().ResetColor();
             player.SetActive(false);
             replayMenu.SetActive(true);

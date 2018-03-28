@@ -18,6 +18,7 @@ public class Core : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<Bullet>().isFriendly)
             {
+                GameManager.Instance.score += 1;
                 transform.localScale = new Vector3(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f, transform.localScale.z);
                 if (transform.localScale.x == 1.3f)
                     GameManager.Instance.NextLevel();
