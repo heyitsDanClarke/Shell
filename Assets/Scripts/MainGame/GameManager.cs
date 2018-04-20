@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour {
 
     bool _gameOver = false;
 
+    public Color[] levelColors;
+    int levelIndex = 0;
+
     void Awake()
     {
         if (Instance == null)
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
 
         healthBar = GameObject.Find("Health").GetComponent<HealthBar>();
+        Camera.main.backgroundColor = levelColors[levelIndex];
     }
 
     void FixedUpdate()
@@ -70,6 +74,10 @@ public class GameManager : MonoBehaviour {
     public void NextLevel()
     {
         player.transform.GetChild(0).localScale = player.transform.GetChild(0).gameObject.GetComponent<Core>().startingSize;
+        levelIndex += 1;
+        if (levelIndex >= levelColors.Length)
+            levelIndex = 0;
+        Camera.main.backgroundColor = levelColors[levelIndex];
     }
 
     public void Damage(int damage)

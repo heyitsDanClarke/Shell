@@ -1218,6 +1218,8 @@ MonoBehaviour:
   health: 10
   score: 0
   replayMenu: {fileID: 2046858600}
+  levelColors:
+  - {r: 0.2509804, g: 0.85490197, b: 0.7921569, a: 1}
 --- !u!4 &908894976
 Transform:
   m_ObjectHideFlags: 0
@@ -1255,10 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5dd572296cd433d9b831328f5a622a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 1351129427982952, guid: d664bd4975d8a7549a46697b2a09e940,
-    type: 2}
-  friendlyBullet: {fileID: 1309050796077254, guid: cd85c314f09191e4da0eb4f619fa7900,
-    type: 2}
+  bullet: {fileID: 0}
   fireTime: 2
 --- !u!1 &917973760
 GameObject:

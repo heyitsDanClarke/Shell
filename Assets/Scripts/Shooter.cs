@@ -1,25 +1,35 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Shooter : MonoBehaviour {
 
-	public GameObject enemyBullet;
-    public GameObject friendlyBullet;
+    public GameObject bullet;
+
+    List<GameObject> spawnedEnemyBullets;
 
 	float timer = 0;
 	public float fireTime =2;
 	Vector3 spawnPos;
-	
-	void Update () {
+
+    private void Start()
+    {
+        spawnedEnemyBullets = new List<GameObject>();
+    }
+
+    void Update () {
 		timer += Time.deltaTime;
         if (timer >= fireTime)
         {
             timer = 0;
-            Fire(enemyBullet);
+            int rand = Random.Range(0, 10);
+            if (rand > 1)
+                Fire(bullet, false);
+            else
+                Fire(bullet, true);
         }
 	}
 
-    void Fire(GameObject bullet)
+    void Fire(GameObject bullet, bool friendly)
     {
         int shootWall = Random.Range(0, 4);
         if (shootWall == 0)
@@ -39,6 +49,7 @@ public class Shooter : MonoBehaviour {
             spawnPos = new Vector3(Random.Range(0f, 1f), 0, 1);
         }
         spawnPos = Camera.main.ViewportToWorldPoint(spawnPos);
-        Instantiate(bullet, spawnPos, transform.rotation);
+        GameObject spawnedBullet = Instantiate(bullet, spawnPos, Quaternion.identity);
+        spawnedBullet.GetComponent<Bullet>().isFriendly = friendly;
     }
 }

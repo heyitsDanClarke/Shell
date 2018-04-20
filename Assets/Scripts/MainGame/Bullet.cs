@@ -18,7 +18,6 @@ public class Bullet : MonoBehaviour {
         if (!isFriendly)
             SetColourComplement(Camera.main.backgroundColor);
         GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * speed;
-
     }
 
     private void OnBecameInvisible()
