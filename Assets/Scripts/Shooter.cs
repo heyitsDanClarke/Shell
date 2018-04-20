@@ -3,17 +3,23 @@ using System.Collections.Generic;
 
 public class Shooter : MonoBehaviour {
 
-    public GameObject bullet;
+    public static Shooter Instance;
 
-    List<GameObject> spawnedEnemyBullets;
+    public GameObject bullet;
+    [HideInInspector]
+    public List<GameObject> activeBullets;
 
 	float timer = 0;
 	public float fireTime =2;
 	Vector3 spawnPos;
 
-    private void Start()
+    private void Awake()
     {
-        spawnedEnemyBullets = new List<GameObject>();
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+        activeBullets = new List<GameObject>();
     }
 
     void Update () {
@@ -22,7 +28,7 @@ public class Shooter : MonoBehaviour {
         {
             timer = 0;
             int rand = Random.Range(0, 10);
-            if (rand > 1)
+            if (rand > 5)
                 Fire(bullet, false);
             else
                 Fire(bullet, true);
@@ -49,7 +55,8 @@ public class Shooter : MonoBehaviour {
             spawnPos = new Vector3(Random.Range(0f, 1f), 0, 1);
         }
         spawnPos = Camera.main.ViewportToWorldPoint(spawnPos);
+
         GameObject spawnedBullet = Instantiate(bullet, spawnPos, Quaternion.identity);
-        spawnedBullet.GetComponent<Bullet>().isFriendly = friendly;
+        spawnedBullet.GetComponent<Bullet>().IsFriendly = friendly;
     }
 }

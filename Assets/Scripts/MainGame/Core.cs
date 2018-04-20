@@ -16,11 +16,11 @@ public class Core : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            if (collision.gameObject.GetComponent<Bullet>().isFriendly)
+            if (collision.gameObject.GetComponent<Bullet>().IsFriendly)
             {
                 GameManager.Instance.score += 1;
                 transform.localScale = new Vector3(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f, transform.localScale.z);
-                if (transform.localScale.x == 1.3f)
+                if (transform.localScale.x >= 1.3f)
                     GameManager.Instance.NextLevel();
             }
             else
@@ -28,6 +28,7 @@ public class Core : MonoBehaviour {
                 GameManager.Instance.Damage(1);
             }
 
+            //Shooter.Instance.RecycleBullet(collision.gameObject);
             Destroy(collision.gameObject);
         }
     }

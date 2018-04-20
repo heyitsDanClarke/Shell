@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour {
         if (levelIndex >= levelColors.Length)
             levelIndex = 0;
         Camera.main.backgroundColor = levelColors[levelIndex];
+        foreach (GameObject bullet in Shooter.Instance.activeBullets)
+            bullet.GetComponent<Bullet>().SetColourComplement(levelColors[levelIndex]);
     }
 
     public void Damage(int damage)

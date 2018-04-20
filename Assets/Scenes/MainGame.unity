@@ -1220,6 +1220,10 @@ MonoBehaviour:
   replayMenu: {fileID: 2046858600}
   levelColors:
   - {r: 0.2509804, g: 0.85490197, b: 0.7921569, a: 1}
+  - {r: 0.6745098, g: 0.31764707, b: 0.33333334, a: 1}
+  - {r: 0.7607843, g: 0.6627451, b: 0.3019608, a: 1}
+  - {r: 0.37254903, g: 0.8156863, b: 0.6, a: 1}
+  - {r: 0.7254902, g: 0.38039216, b: 0.28235295, a: 1}
 --- !u!4 &908894976
 Transform:
   m_ObjectHideFlags: 0
@@ -1257,7 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5dd572296cd433d9b831328f5a622a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  activeBullets: []
+  bullet: {fileID: 1351129427982952, guid: d664bd4975d8a7549a46697b2a09e940, type: 2}
   fireTime: 2
 --- !u!1 &917973760
 GameObject:

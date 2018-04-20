@@ -6,17 +6,27 @@ public class Bullet : MonoBehaviour {
 
     SpriteRenderer _sr;
 
-    public bool isFriendly = false;
+    bool _isFriendly = false;
+    public bool IsFriendly
+    {
+        get { return _isFriendly; }
+        set
+        {
+            _isFriendly = value;
+            if (_isFriendly)
+                _sr.color = Color.white;
+            else
+                SetColourComplement(Camera.main.backgroundColor);
+        }
+    }
     public float speed = 1;
 
     GameObject player;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.Find("Player");
         _sr = GetComponent<SpriteRenderer>();
-        if (!isFriendly)
-            SetColourComplement(Camera.main.backgroundColor);
         GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * speed;
     }
 
@@ -25,13 +35,12 @@ public class Bullet : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    void SetColourComplement(Color inputColor)
+    public void SetColourComplement(Color inputColor)
     {
         float tempH, tempS, tempV;
         Color.RGBToHSV(inputColor, out tempH, out tempS, out tempV);
         float newH = (tempH + 0.5f) % 1;
         Color tempColor = Color.HSVToRGB(newH, tempS, tempV);
-
         _sr.color = tempColor;
 
         Gradient tempGrad = new Gradient();
