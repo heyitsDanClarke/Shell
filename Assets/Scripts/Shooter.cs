@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour {
 
-	public GameObject bullet;
+	public GameObject enemyBullet;
+    public GameObject friendlyBullet;
 
 	float timer = 0;
 	public float fireTime =2;
@@ -14,7 +15,7 @@ public class Shooter : MonoBehaviour {
         if (timer >= fireTime)
         {
             timer = 0;
-            Fire(bullet);
+            Fire(enemyBullet);
         }
 	}
 
