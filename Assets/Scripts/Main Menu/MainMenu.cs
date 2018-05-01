@@ -34,6 +34,11 @@ public class MainMenu : MonoBehaviour {
         StartCoroutine(LoadGame());
     }
 
+    public void OpenShop()
+    {
+
+    }
+
     IEnumerator LoadGame()
     {
         while (player.transform.position.y != 0)
