@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour {
 
     CanvasGroup canvasGroup;
 
+    public GameObject mainCanvas;
+    public GameObject shopCanvas;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -26,7 +29,7 @@ public class MainMenu : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         walls = player.transform.GetChild(1).gameObject;
 
-        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup = mainCanvas.GetComponent<CanvasGroup>();
     }
 
     public void Play()
@@ -36,7 +39,16 @@ public class MainMenu : MonoBehaviour {
 
     public void OpenShop()
     {
+        mainCanvas.SetActive(false);
+        player.SetActive(false);
+        shopCanvas.SetActive(true);
+    }
 
+    public void CloseShop()
+    {
+        mainCanvas.SetActive(true);
+        player.SetActive(true);
+        shopCanvas.SetActive(false);
     }
 
     IEnumerator LoadGame()
