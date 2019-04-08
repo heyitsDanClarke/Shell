@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour {
     CanvasGroup canvasGroup;
 
     public GameObject mainCanvas;
-    public GameObject shopCanvas;
 
     private void Awake()
     {
@@ -37,23 +36,9 @@ public class MainMenu : MonoBehaviour {
         StartCoroutine(LoadGame());
     }
 
-    public void OpenShop()
-    {
-        mainCanvas.SetActive(false);
-        player.SetActive(false);
-        shopCanvas.SetActive(true);
-    }
-
-    public void CloseShop()
-    {
-        mainCanvas.SetActive(true);
-        player.SetActive(true);
-        shopCanvas.SetActive(false);
-    }
-
     IEnumerator LoadGame()
     {
-        while (player.transform.position.y != 0)
+        while (player.transform.position.y > 0)
         {
             player.transform.position = Vector3.MoveTowards(player.transform.position, Vector3.zero, Time.deltaTime);
             yield return null;
